@@ -1,9 +1,21 @@
 <!-- App.svelte -->
 <script>
-  /* component logic will go here */
+  import BlogPostList from "./components/BlogPostList.svelte";
+  import NavBar from './components/NavBar.svelte';
+  let activeTab = 'home';
+
+  const changeTab = (tab) => {
+    activeTab = tab;
+  }
 </script>
 <style>
-
+ h1 {
+   font-size: 30px;
+ }
 </style>
 
-<h1>It is time to get funkys</h1>
+<div>
+  <h1>"WELCOME TO HELL" -Zarah probably</h1>
+  <NavBar changeTab={changeTab}/>
+  <BlogPostList activeTab={activeTab} />
+</div>
